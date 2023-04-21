@@ -1,4 +1,4 @@
-import { createApp, getCurrentInstance } from 'vue'
+import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 import {
   renderWithQiankun,
