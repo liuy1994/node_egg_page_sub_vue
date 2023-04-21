@@ -1,8 +1,5 @@
-<script setup lang="ts">
-</script>
-
 <template>
   <main>
-    hahahah
+    Hello Vue！
   </main>
 </template>
