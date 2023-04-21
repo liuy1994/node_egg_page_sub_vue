@@ -7,22 +7,25 @@ import vueJsx from '@vitejs/plugin-vue-jsx'
 import qiankun from 'vite-plugin-qiankun'
 
 // https://vitejs.dev/config/
-export default defineConfig({
-  plugins: [
-    vue(),
-    vueJsx(),
-    qiankun('vue', {
-      useDevMode: true
-    })
-  ],
-  resolve: {
-    alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url))
+export default defineConfig(() => {
+  return {
+    base: "https://vue.0218.life",
+    plugins: [
+      vue(),
+      vueJsx(),
+      qiankun('vue', {
+        useDevMode: true
+      })
+    ],
+    resolve: {
+      alias: {
+        '@': fileURLToPath(new URL('./src', import.meta.url))
+      }
+    },
+    server: {
+      port: 8002,
+      cors: true,
+      origin: 'http://localhost:8002'
     }
-  },
-  server: {
-    port: 8002,
-    cors: true,
-    origin: 'http://localhost:8002'
   }
 })

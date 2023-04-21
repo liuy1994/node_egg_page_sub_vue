@@ -11,23 +11,29 @@ const onChange = () => {
 
 onMounted(() => {
   const $qiankun = getCurrentInstance()!.appContext.app.config.globalProperties.$qiankun
-  getUrl.value = $qiankun.getUrl
+  getUrl.value = $qiankun?.getUrl
 })
 
 </script>
 
 <template>
-  <div>
+  <main>
     <input type="file" @change="onChange" ref="input" accept="image/png, image/jpeg">
-  </div>
+  </main>
 </template>
 
 <style scoped lang="less">
+main {
+  display: flex;
+  align-items: center;
+}
 input {
   font-size: 16px;
 }
 img {
-  width: 32px;
+  width: 27px;
+  height: 27px;
   object-fit: contain;
+  margin-right: 12px;
 }
 </style>
